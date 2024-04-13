@@ -3,5 +3,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="appTitle">HelloAgain</string>
     <string name= "startButton">Hello</string>
+    <string name = "display">Response:</string>
 
 </resources>
