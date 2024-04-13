@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -6,9 +8,12 @@ plugins {
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
+val GEMINI_API_KEY = gradleLocalProperties(rootDir).getProperty("GEMINI_API_KEY")
+
 android {
     namespace = "edu.quinnipiac.hackathon"
     compileSdk = 34
+
 
     defaultConfig {
         applicationId = "edu.quinnipiac.hackathon"
@@ -21,14 +26,22 @@ android {
     }
     buildFeatures{
         viewBinding = true
+        buildConfig = true
+
     }
     buildTypes {
+        all {
+            resValue("string", "GEMINI_API_KEY", GEMINI_API_KEY)
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+        debug {
+
         }
     }
     compileOptions {
@@ -53,5 +66,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("com.google.ai.client.generativeai:generativeai:0.3.0")
+    implementation("com.google.code.gson:gson:2.10.1")
+
 
 }
