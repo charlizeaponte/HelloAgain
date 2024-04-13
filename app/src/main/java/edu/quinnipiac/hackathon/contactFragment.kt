@@ -37,10 +37,10 @@ class contactFragment : Fragment() {
 
             val action = contactFragmentDirections
                 .actionContactFragmentToReasonFragment(
+                    view.findViewById<EditText>(R.id.field_contact_context).text.toString(),
                     args.getString("your_name")!!,
                     args.getString("contact_name")!!,
-                    args.getString("relationship")!!,
-                    view.findViewById<EditText>(R.id.field_contact_context).text.toString()
+                    args.getString("relationship")!!
                 )
 
 

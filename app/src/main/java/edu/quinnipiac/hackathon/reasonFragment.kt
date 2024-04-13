@@ -33,11 +33,13 @@ override fun onCreateView(
 
             val action = reasonFragmentDirections
                 .actionReasonFragmentToResponsesFragment(
+                    view.findViewById<EditText>(R.id.field_contacting_reason).text.toString(),
+
+                    args.getString("contact_context")!!,
                     args.getString("your_name")!!,
                     args.getString("contact_name")!!,
                     args.getString("relationship")!!,
-                    args.getString("contact_context")!!,
-                    view.findViewById<EditText>(R.id.field_contacting_reason).text.toString()
+
                 )
 
 
