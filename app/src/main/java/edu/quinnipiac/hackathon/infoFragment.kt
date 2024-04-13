@@ -13,6 +13,7 @@ import edu.quinnipiac.hackathon.databinding.FragmentInfoBinding
 class infoFragment : Fragment() {
     private var _binding:FragmentInfoBinding? = null
     private val binding get() = _binding!!
+    lateinit var nameText: EditText
 
 
     override fun onCreateView(
@@ -22,6 +23,7 @@ class infoFragment : Fragment() {
         _binding = FragmentInfoBinding.inflate(inflater,container,false)
         val view = binding.root
         return view
+         nameText = view.findViewById<EditText>(R.id.field_your_name)
 
 
     }
@@ -29,7 +31,14 @@ class infoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.inBackbutton.setOnClickListener {
-            it.findNavController().navigate(R.id.action_infoFragment_to_homeFragment)
+
+            val name = nameText.text.toString()
+            val action = infoFragmentDirections
+                .actionInfoFragmentToContactFragment(name)
+           
+
+
+            it.findNavController().navigate(R.id.action_infoFragment_to_homeFragment).
         }
         binding.inForbutton.setOnClickListener {
 
