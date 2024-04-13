@@ -5,7 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.ai.client.generativeai.GenerativeModel
 import com.google.ai.client.generativeai.type.BlockThreshold
 import com.google.ai.client.generativeai.type.HarmCategory
@@ -14,10 +19,17 @@ import com.google.ai.client.generativeai.type.generationConfig
 import com.google.gson.Gson
 import com.google.gson.JsonParser
 import edu.quinnipiac.hackathon.databinding.FragmentResponsesBinding
+import kotlinx.coroutines.launch
 
 class responsesFragment : Fragment() {
     private var _binding: FragmentResponsesBinding? = null
     private val binding get() = _binding!!
+
+    lateinit var recyclerView: RecyclerView
+    lateinit var recyclerAdapter: RecycleItemAdapter;
+
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,10 +39,35 @@ class responsesFragment : Fragment() {
         return view
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+
+
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.resbackbutton.setOnClickListener {
             it.findNavController().navigate(R.id.action_responsesFragment_to_homeFragment)
+        }
+
+        recyclerView = binding.recyclerView
+        recyclerAdapter = RecycleItemAdapter(requireContext(), Navigation.findNavController(view))
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.adapter = recyclerAdapter
+
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            val args = requireArguments();
+            val responses = getResponses(
+                args.getString("your_name", "No Name Given"),
+                args.getString("contact_name", "No Contact Name Given"),
+                args.getString("relationship", "No Relationship Given"),
+                args.getString("contact_context", "No Context Given"),
+                args.getString("contacting_reason", "No Contacting Reason Given")
+            )
+            recyclerAdapter.setMessages(responses.asList())
         }
 
     }
