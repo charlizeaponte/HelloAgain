@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Hackathon</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="appTitle">HelloAgain</string>
+    <string name= "startButton">Hello</string>
+
 </resources>
