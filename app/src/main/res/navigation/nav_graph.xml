@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_contactFragment_to_infoFragment"
             app:destination="@id/infoFragment" />
+        <argument
+            android:name="contact_context"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -37,6 +40,15 @@
         <action
             android:id="@+id/action_infoFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <argument
+            android:name="your_name"
+            app:argType="string" />
+        <argument
+            android:name="your_contact"
+            app:argType="string" />
+        <argument
+            android:name="relationship"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/reasonFragment"
@@ -49,6 +61,9 @@
         <action
             android:id="@+id/action_reasonFragment_to_contactFragment"
             app:destination="@id/contactFragment" />
+        <argument
+            android:name="contacting_reason"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/responsesFragment"
