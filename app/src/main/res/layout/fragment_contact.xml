@@ -1,5 +1,4 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,64 +7,56 @@
     android:orientation="vertical"
     tools:context=".contactFragment">
 
-
-    <Button
-        android:id="@+id/conbackbutton"
-        android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginBottom="76dp"
-        android:text="Back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/conForbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="76dp"
-        android:layout_marginBottom="76dp"
-        android:text="Next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/conbackbutton" />
+        android:text="About {NAME}"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        />
 
     <TextView
-        android:id="@+id/aboutContact"
-        android:layout_width="103dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="52dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/contact_context"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Give a brief summary of your person"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="10dp" />
+
 
     <EditText
-        android:id="@+id/contact_context"
-        android:layout_width="306dp"
-        android:layout_height="320dp"
-        android:layout_marginBottom="240dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.419"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:id="@+id/field_contact_context"
+        android:layout_width="match_parent"
+        android:inputType="textMultiLine"  android:layout_height="wrap_content"/>
 
-    <TextView
-        android:id="@+id/explainContext"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="96dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/contact_context"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/conbackbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/conForbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next" />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -4,5 +4,8 @@
     <string name="appTitle">HelloAgain</string>
     <string name= "startButton">Hello</string>
     <string name = "display">Response:</string>
+    <string name="field_your_name_hint">Enter your name</string>
+    <string name="field_contact_name_hint">Enter your contact name</string>
+    <string name="field_relationship_hint">Ex: friend, sister, etc.</string>
 
 </resources>
