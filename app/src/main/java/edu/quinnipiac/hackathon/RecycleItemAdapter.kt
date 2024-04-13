@@ -1,6 +1,8 @@
 
 package edu.quinnipiac.hackathon
 
+import android.content.ClipData
+import android.content.ClipboardManager
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -22,6 +24,7 @@ class RecycleItemAdapter(val context: Context, var navController: NavController)
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecycleItemViewHolder {
 
             val view = LayoutInflater.from(parent.context).inflate(R.layout.item_responses,parent,false)
+
             return RecycleItemViewHolder(view, context, navController)
         }
 

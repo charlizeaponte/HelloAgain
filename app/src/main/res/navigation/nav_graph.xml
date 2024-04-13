@@ -16,6 +16,14 @@
         <action
             android:id="@+id/action_contactFragment_to_infoFragment"
             app:destination="@id/infoFragment" />
+        <argument android:name="your_name"
+            app:argType="string" />
+        <argument
+            android:name="contact_name"
+            app:argType="string" />
+        <argument
+            android:name="relationship"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -49,12 +57,35 @@
         <action
             android:id="@+id/action_reasonFragment_to_contactFragment"
             app:destination="@id/contactFragment" />
+        <argument android:name="contact_context"
+            app:argType="string" />
+        <argument android:name="your_name"
+            app:argType="string" />
+        <argument
+            android:name="contact_name"
+            app:argType="string" />
+        <argument
+            android:name="relationship"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/responsesFragment"
         android:name="edu.quinnipiac.hackathon.responsesFragment"
         android:label="fragment_responses"
         tools:layout="@layout/fragment_responses" >
+        <argument
+            android:name="contacting_reason"
+            app:argType="string" />
+        <argument android:name="contact_context"
+            app:argType="string" />
+        <argument android:name="your_name"
+            app:argType="string" />
+        <argument
+            android:name="contact_name"
+            app:argType="string" />
+        <argument
+            android:name="relationship"
+            app:argType="string" />
         <action
             android:id="@+id/action_responsesFragment_to_homeFragment"
             app:destination="@id/homeFragment" />

@@ -1,6 +1,7 @@
 package edu.quinnipiac.hackathon
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -121,6 +122,8 @@ class responsesFragment : Fragment() {
                "message"
            ]
        """.trimIndent()
+
+        Log.v("prompt",prompt)
 
         val response = model.generateContent(prompt);
         val stringArray: Array<String> = Gson().fromJson(response.text, Array<String>::class.java)

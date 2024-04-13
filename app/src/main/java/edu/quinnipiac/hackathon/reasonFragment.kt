@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import androidx.navigation.findNavController
 import edu.quinnipiac.hackathon.databinding.FragmentReasonBinding
 
@@ -25,9 +26,24 @@ override fun onCreateView(
         super.onViewCreated(view, savedInstanceState)
         binding.reabackbutton.setOnClickListener {
             it.findNavController().navigate(R.id.action_reasonFragment_to_contactFragment)
+
         }
         binding.reaForbutton.setOnClickListener {
-            it.findNavController().navigate(R.id.action_reasonFragment_to_responsesFragment)
+            val args = requireArguments();
+
+            val action = reasonFragmentDirections
+                .actionReasonFragmentToResponsesFragment(
+                    args.getString("your_name")!!,
+                    args.getString("contact_name")!!,
+                    args.getString("relationship")!!,
+                    args.getString("contact_context")!!,
+                    view.findViewById<EditText>(R.id.field_contacting_reason).text.toString()
+                )
+
+
+
+            it.findNavController().navigate(action)
+
         }
     }
 
