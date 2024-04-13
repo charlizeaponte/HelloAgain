@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="edu.quinnipiac.hackathon.contactFragment"
+        android:label="fragment_contact"
+        tools:layout="@layout/fragment_contact" >
+        <action
+            android:id="@+id/action_contactFragment_to_reasonFragment"
+            app:destination="@id/reasonFragment" />
+        <action
+            android:id="@+id/action_contactFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="edu.quinnipiac.hackathon.homeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="edu.quinnipiac.hackathon.infoFragment"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" >
+        <action
+            android:id="@+id/action_infoFragment_to_contactFragment"
+            app:destination="@id/contactFragment" />
+        <action
+            android:id="@+id/action_infoFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reasonFragment"
+        android:name="edu.quinnipiac.hackathon.reasonFragment"
+        android:label="fragment_reason"
+        tools:layout="@layout/fragment_reason" >
+        <action
+            android:id="@+id/action_reasonFragment_to_responsesFragment"
+            app:destination="@id/responsesFragment" />
+        <action
+            android:id="@+id/action_reasonFragment_to_contactFragment"
+            app:destination="@id/contactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/responsesFragment"
+        android:name="edu.quinnipiac.hackathon.responsesFragment"
+        android:label="fragment_responses"
+        tools:layout="@layout/fragment_responses" >
+        <action
+            android:id="@+id/action_responsesFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
