@@ -31,14 +31,7 @@ class infoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.inBackbutton.setOnClickListener {
-
-            val name = nameText.text.toString()
-            val action = infoFragmentDirections
-                .actionInfoFragmentToContactFragment(name)
-           
-
-
-            it.findNavController().navigate(R.id.action_infoFragment_to_homeFragment).
+            it.findNavController().navigate(R.id.action_infoFragment_to_homeFragment);
         }
         binding.inForbutton.setOnClickListener {
 

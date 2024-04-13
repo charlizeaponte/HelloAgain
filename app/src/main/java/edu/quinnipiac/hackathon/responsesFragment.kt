@@ -113,7 +113,7 @@ class responsesFragment : Fragment() {
            
            $contacting_reason
            
-           Come up with at least 20 text messages $your_name can send $contact_name to reconnect. These texts should not be too long, but also not too short. Do not assume anything that wasn't included in the prompt above. These text messages should be complete and ready to copy and paste without editing anything (like placeholders) or finishing sentences. The messages should be conversation starters, as they will most likely be sent to $contact_context out of the blue.
+           Come up with 10 text messages $your_name can send $contact_name to reconnect. These texts should not be too long, but also not too short. Do not assume anything that wasn't included in the prompt above. These text messages should be complete and ready to copy and paste without editing anything (like placeholders) or finishing sentences. The messages should be conversation starters, as they will most likely be sent to $contact_context out of the blue.
 
            Format the texts in a JSON format (array of strings). Do not include any additional surrounding syntax for markdown. The format should be just like the following:
            [
